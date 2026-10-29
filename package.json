@@ -1,0 +1,22 @@
+{
+  "name": "sovereign-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Prototype of the Sovereign Medical Data Record System (Next.js + MongoDB)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "mongoose": "^9.11.4",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.3"
+  }
+}
