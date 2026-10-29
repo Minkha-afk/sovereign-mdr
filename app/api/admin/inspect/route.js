@@ -1,4 +1,4 @@
-import { route, ok, requireDemoPassword } from "@/lib/api";
+import { route, ok } from "@/lib/api";
 import { Person, User, Organization, DataKey, VaultObject, Record, Grant, ConsentEvent, AccessLog } from "@/lib/models";
 import { verifyAccessChain, verifyConsentChain } from "@/lib/chain";
 
@@ -17,8 +17,7 @@ function raw(doc) {
 }
 
 // What a database administrator (or a leaked dump) would see. No KEK, no plaintext clinical data.
-export const GET = route(async (req) => {
-  requireDemoPassword(req);
+export const GET = route(async () => {
   const [persons, users, orgs, dataKeys, objects, records, grants, events, log] = await Promise.all([
     Person.find().lean(), User.find().lean(), Organization.find().lean(), DataKey.find().lean(),
     VaultObject.find().sort({ _id: -1 }).limit(6).lean(), Record.find().sort({ _id: -1 }).limit(6).lean(),

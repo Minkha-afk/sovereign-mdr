@@ -1,7 +1,6 @@
-import { route, ok, requireDemoPassword } from "@/lib/api";
+import { route, ok } from "@/lib/api";
 import { seedDemo } from "@/lib/seed";
 
-export const POST = route(async (req) => {
-  requireDemoPassword(req);
+export const POST = route(async () => {
   return ok(await seedDemo());
 });
